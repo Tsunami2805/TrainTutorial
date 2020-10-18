@@ -11,17 +11,12 @@ import serenitylabs.tutorials.trains.journeys.TheAvailableJourneys;
 import serenitylabs.tutorials.trains.navigation.Navigate;
 import serenitylabs.tutorials.trains.search.DepartureDay;
 import serenitylabs.tutorials.trains.search.FindTickets;
-import serenitylabs.tutorials.trains.search.SeasonTicketDuration;
-
-import java.util.List;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static org.hamcrest.Matchers.*;
-import static serenitylabs.tutorials.trains.navigation.Section.BuySeasonTickets;
 import static serenitylabs.tutorials.trains.navigation.Section.BuyTickets;
-import static serenitylabs.tutorials.trains.seasontickets.SeasonTicketOptions.seeEachSeasonTicketOptionIn;
 
 public class BuyTicketsStepDefinitions {
 
@@ -37,16 +32,31 @@ public class BuyTicketsStepDefinitions {
         );
     }
 
-    @When("^s?he looks at a trip from (.*) to (.*) leaving (.*)$")
+    //    @When("^s?he looks at a trip from (.*) to (.*) leaving (.*)$")
+//    public void looks_at_a_trip(String origin,
+//                                String destination,
+//                                DepartureDay departureDay) throws Throwable {
+//
+//        theActorInTheSpotlight().attemptsTo(
+//                FindTickets
+//                        .forAOneWayTrip()
+//                        .from(origin)
+//                        .to(destination)
+//                        .leaving(departureDay)
+//        );
+//    }
+    @When("^s?he looks at a trip from (.*) to (.*) leaving (.*) on (.*)$")
     public void looks_at_a_trip(String origin,
                                 String destination,
-                                DepartureDay departureDay) throws Throwable {
+                                DepartureDay departureDay,
+                                String flyclass) throws Throwable {
 
         theActorInTheSpotlight().attemptsTo(
                 FindTickets
                         .forAOneWayTrip()
                         .from(origin)
                         .to(destination)
+                        .on(flyclass)
                         .leaving(departureDay)
         );
     }

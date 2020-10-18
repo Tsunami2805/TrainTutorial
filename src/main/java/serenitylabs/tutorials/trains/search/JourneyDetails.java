@@ -29,4 +29,11 @@ class JourneyDetails {
 
     static final Target RETURN_DATE = Target.the("return date")
             .locatedBy("(//*[contains(@class,'date-time__display-primary')])[2]");
+    static final Target FLY_CLASS = Target.the("fly class")
+            .locatedBy("(//*[@id=\"travellerButton\"])[1]");
+    static final Target FLY_CLASS_SELECTOR = Target.the("fly class selector")
+            .locatedBy("//*[@id=\"Class\"]");
+    static final Target FLY_CLASS_SELECTOR_DONE = Target.the("fly class done")
+            .locatedBy("//*[@id=\"closeDealDialog\"]");
+
 }

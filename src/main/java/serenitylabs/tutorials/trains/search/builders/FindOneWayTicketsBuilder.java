@@ -10,6 +10,7 @@ public class FindOneWayTicketsBuilder {
 
     private String departure;
     private String destination;
+    private String flyclass;
 
     public FindOneWayTicketsBuilder from(String departure) {
         this.departure = departure;
@@ -21,7 +22,12 @@ public class FindOneWayTicketsBuilder {
         return this;
     }
 
+    public FindOneWayTicketsBuilder on(String flyclass) {
+        this.flyclass = flyclass;
+        return this;
+    }
+
     public Performable leaving(DepartureDay departureDay) {
-        return instrumented(FindOneWayTickets.class, departure, destination, departureDay);
+        return instrumented(FindOneWayTickets.class, departure, destination, flyclass, departureDay);
     }
 }
