@@ -2,8 +2,8 @@ package serenitylabs.tutorials.trains.search;
 
 import net.serenitybdd.screenplay.targets.Target;
 
-class JourneyDetails {
-    static final Target ONEWAY_BUTTON = Target.the("one way button")
+public class JourneyDetails {
+    public static final Target ONEWAY_BUTTON = Target.the("one way button")
             .locatedBy("//label[@for='onewayTrip']");
 
     static final Target ORIGIN = Target.the("origin field")

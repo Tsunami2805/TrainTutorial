@@ -76,4 +76,14 @@ public class BuyTicketsStepDefinitions {
     private Matcher<String> isPresent() {
         return not(isEmptyString());
     }
+
+    @When("she does everything")
+    public void sheDoesEverything() {
+        theActorInTheSpotlight().attemptsTo(
+                GivenThatHe
+                        .leaving("abcde")
+
+
+        );
+    }
 }
